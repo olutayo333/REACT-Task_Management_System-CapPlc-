@@ -16,13 +16,13 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Dashboard/>}/>
+          <Route path='/' element={<EmployeeForm/>}/>
           
-          <Route path='home' element={<Home/>} />
+          {/* <Route path='home' element={<Home/>} /> */}
           
           <Route path='form' element={<EmployeeForm/>} />
           <Route path='dashboard' element={<Dashboard/>} />
-          <Route path='/*' element={<Home/>}/>
+          <Route path='/*' element={<EmployeeForm/>}/>
         </Routes>
       </BrowserRouter>  
     </>

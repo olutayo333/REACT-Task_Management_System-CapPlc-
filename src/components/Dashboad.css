@@ -1,0 +1,28 @@
+.search_button{
+    letter-spacing:5px; font-size:18px; 
+    color:#0D6EFD ;
+    background-color:white;
+}
+
+.search_button:hover{
+    background-color:#0D6EFD;
+    color: white;
+}
+
+/* MOBILE VIEW ONLY */
+@media all and (max-width:475px) {
+    #desktop{
+        display: none;
+    }
+    
+}
+/* ============ only desktop view ============ */
+@media all and (min-width: 992px) {
+    #mobile{
+        display: none;
+    }
+    #desktop-top-menu{
+        display: none;
+    }
+}
+

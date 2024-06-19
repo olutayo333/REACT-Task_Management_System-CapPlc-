@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import { CDBContainer } from 'cdbreact';
+
+import html2canvas from 'html2canvas';
+import { jsPDF } from 'jspdf';
+
 const Home = () => {
   
   const [data] = useState({
@@ -34,9 +38,40 @@ const Home = () => {
     }
   ChartJS.register(ArcElement, Tooltip, Legend);
 
+//DOWNLOAD BY PDF
+  // const printRef = React.useRef();
+
+  // const handleDownloadPdf = async () => {
+  //   const element = printRef.current;
+  //   const canvas = await html2canvas(element);
+  //   const data = canvas.toDataURL('image/png');
+
+  //   const pdf = new jsPDF();
+  //   const imgProperties = pdf.getImageProperties(data);
+  //   const pdfWidth = pdf.internal.pageSize.getWidth();
+  //   const pdfHeight =
+  //     (imgProperties.height * pdfWidth) / imgProperties.width;
+
+  //   pdf.addImage(data, 'PNG', 0, 0, pdfWidth, pdfHeight);
+  //   pdf.save('print.pdf');
+  // };
+
+  const handleDownloadPdf = ()=> {
+    const doc = new jsPDF();
+
+    doc.text("Hello world!", 10, 10);
+    doc.save("a4.pdf");
+  }
+
   return (
     <CDBContainer>
-    
+      <button type="button" onClick={handleDownloadPdf}>
+        Download as PDF
+      </button>
+
+      <div>I will not be in the PDF.</div>
+      {/* <div ref={printRef}>I will be in the PDF.</div> */}
+      
       Chart JS
       <Doughnut data={data} options={{ responsive: true }}/>
     </CDBContainer>
