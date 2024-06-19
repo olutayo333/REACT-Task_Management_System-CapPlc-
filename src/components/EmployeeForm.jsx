@@ -46,12 +46,12 @@ const submit =()=>{
        setname(e.target.value);  
        setvalidname(nameRegEx.test(name2)); 
   }
-  // const verifyTaskDetails =(e)=>
-  //   {    const taskDetailsRegEx = /^([a-zA-Z]{1,15})+([\s][a-zA-Z]{1,15})+$/  
-  //        const taskdetails2 = e.target.value; 
-  //        settaskdetails(e.target.value); console.log(taskdetails); 
-  //        setvalidtaskdetails(taskDetailsRegEx.test(taskdetails2)); 
-  //   }
+  const verifyTaskDetails =(e)=>
+    {    const taskDetailsRegEx = /^[a-zA-Z\s]*$/  
+         const taskdetails2 = e.target.value; 
+         settaskdetails(e.target.value); console.log(taskdetails); 
+         setvalidtaskdetails(taskDetailsRegEx.test(taskdetails2)); 
+    }
 
   return (
     <div className='container-fluid'>
@@ -83,7 +83,7 @@ const submit =()=>{
                   <option value="Production">Production</option>
                   <option value="Maintenance">Maintenance</option>
             </select> 
-            {/* {
+            {
               validtaskdetails? 
               <>
                  <input type="text" name='taskdetails' className='form-control my-2' placeholder='Task Details' onChange={verifyTaskDetails} required/>
@@ -92,8 +92,8 @@ const submit =()=>{
                 <input type="text" className='form-control is-invalid'   placeholder='Task Details' onChange={verifyTaskDetails} required />
                 <small className='invalid-feedback'>Please enter valid task details</small>  
               </>
-            } */}
-            <input type="text" name='taskdetails' className='form-control my-2' placeholder='Task Details' onChange={(e)=>settaskdetails(e.target.value)}/>
+            }
+            {/* <input type="text" name='taskdetails' className='form-control my-2' placeholder='Task Details' onChange={(e)=>settaskdetails(e.target.value)}/> */}
             <input type="number" name='hoursworked' className='form-control my-2' placeholder='Hours Worked' min={0} max={12} onChange={(e)=>sethoursworked(e.target.value)} />
             <input type="date" name='date' className='form-control my-2' onChange={(e)=>setdate(e.target.value)}/>
             {

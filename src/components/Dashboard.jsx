@@ -200,9 +200,7 @@ const Dashboard = () => {
                     </span>   
                     <button className='btn btn-small w-25 search_button shadow' onClick={filter}><FaSearch /><b className='ms-3'>Search</b> </button> 
                 </div>           
-            
-                <p className='alert alert-danger'><b>{errorMsg}</b></p>
-
+                <p className='text-danger fs-5 animate__animated animate__flash animate__delay-1s  animate__infinite infinite animate__slower'><b>{errorMsg}</b></p>
 
                 <p className='display-4 my-3 text-secondary' style={{letterSpacing:"10px"}}> <b>Task Report</b> </p>  <hr />
                 {
@@ -364,7 +362,7 @@ const Dashboard = () => {
                                 </select>
                             <button className='btn btn-small w-100 search_button shadow' onClick={filter}> <b >Search</b> </button>
                         </div>
-                        <p className='alert alert-danger'><b>{errorMsg}</b></p>
+                        <p className='text-danger animate__animated animate__flash animate__delay-1s  animate__infinite infinite animate__slower'><b>{errorMsg}</b></p>
                     </div>
                     <div className='col-12'>
                         <p className='display-4 my-3 text-secondary' style={{letterSpacing:"5px"}}> <b>Task Report</b> </p>  <hr />
