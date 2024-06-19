@@ -13,7 +13,6 @@ import { IoIosCloudDownload } from "react-icons/io"; import { FaSearch } from "r
 import loadingGif from "../assets/loadinggif1.gif";
 
 const Dashboard = () => {
-    //https://nodejs-cap-taskmanagementserver.onrender.com
     let dashboardURL = "https://nodejs-cap-taskmanagementserver.onrender.com/user/dashboard";
     let deleteURL = "https://nodejs-cap-taskmanagementserver.onrender.com/user/delete";
     let editURL = "https://nodejs-cap-taskmanagementserver.onrender.com/user/edit";
@@ -353,7 +352,7 @@ const Dashboard = () => {
                 <div className='row'>
                     <div className='col-12'>
                         <span className='  '>
-                            <Link className='text-primary mx-1 rounded shadow px-3 py-1' to='/'> <i>Dashboard</i></Link> 
+                            <Link className='text-primary mx-1 rounded shadow px-3 py-1' to='/dashboard'> <i>Dashboard</i></Link> 
                             <Link className='text-primary mx-1 rounded shadow px-3 py-1' to='/form'><i>Task Form</i> </Link>
                         </span>
                         <div className=' mt-4 bg-primary py-2 px-2 rounded' style={{ }}>

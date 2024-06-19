@@ -5,8 +5,6 @@ import Spinner from 'react-bootstrap/Spinner';
 
 const EmployeeForm = () => {
     //VARIABLE DECLARATIONS
-    
-// let submittaskURL = "http://localhost:7000/user/submittask"
 let submittaskURL = "https://nodejs-cap-taskmanagementserver.onrender.com/user/submittask"
 const Navigate = useNavigate();
 const [name, setname]= useState(""); 
