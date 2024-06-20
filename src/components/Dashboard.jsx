@@ -349,10 +349,10 @@ const Dashboard = () => {
             <div id='mobile'>
                 <div className='row'>
                     <div className='col-12'>
-                        <span className='  '>
-                            <Link className='text-primary mx-1 rounded shadow px-3 py-1' to='/dashboard'> <i>Dashboard</i></Link> 
-                            <Link className='text-primary mx-1 rounded shadow px-3 py-1' to='/form'><i>Task Form</i> </Link>
-                        </span>
+                        <div className=' bg-primary py-2 shadow rounded'>
+                            <Link className='text-primary bg-white mx-1 rounded shadow px-3 py-1' to='/dashboard'> <i>Dashboard</i></Link> 
+                            <Link className='text-primary bg-white mx-1 rounded shadow px-3 py-1' to='/form'><i>Task Form</i> </Link>
+                        </div>
                         <div className=' mt-4 bg-primary py-2 px-2 rounded' style={{ }}>
                             <input type="text" placeholder='Enter Department or Name' className='form-control w-100'  onChange={(e) => setsearch(e.target.value)} />
                                 <select className=" my-2 form-select w-100 "id="" value={all} style={{zIndex:1}} onChange={(e) => setall(e.target.value)}>

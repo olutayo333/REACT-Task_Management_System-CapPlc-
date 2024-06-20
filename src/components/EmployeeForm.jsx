@@ -56,11 +56,11 @@ const submit =()=>{
   return (
     <div className='container-fluid'>
       <div className='row '>
-        <div className=' col-lg-12 my-4 py-2 mx-2 shadow rounded justify-content-center text-center'>
-                <span className='  '>
-                    <Link className='text-primary mx-1 rounded shadow px-3 py-1' to='/dashboard'> <i>Dashboard</i></Link> 
-                    <Link className='text-primary mx-1 rounded shadow px-3 py-1' to='/form'><i>Task Form</i> </Link>
-                </span>
+        <div className=' col-lg-12 my-2 py-2 mx-2 shadow rounded justify-content-center text-center'>
+            <div className=' bg-primary py-2 shadow rounded'>
+                <Link className='text-primary bg-white mx-1 rounded shadow px-3 py-1' to='/dashboard'> <i>Dashboard</i></Link> 
+                <Link className='text-primary bg-white mx-1 rounded shadow px-3 py-1' to='/form'><i>Task Form</i> </Link>
+            </div> <hr />
             <p className='text-primary fs-2'> <b>Employee Task Form</b></p> 
             
             {
