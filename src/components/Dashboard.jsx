@@ -123,7 +123,7 @@ const Dashboard = () => {
       })
     }
 
-    // SEARCH FUNCTION
+    // FILTER FUNCTION
     const filter = ()=>{
         if (!all)
             {
@@ -134,14 +134,16 @@ const Dashboard = () => {
             seterrorMsg(""); setsearch2(search);
             if(all=="department")
                 {
-                    let result = taskarray.filter(u=>(u.department.toLowerCase()==search.toLowerCase()));
+                    //let result = taskarray.filter(u=>(u.department.toLowerCase()==search.toLowerCase()));
+                    let result = taskarray.filter(u=>(u.department.toLowerCase().match(search.toLocaleLowerCase())));
                     setsearchbydepartment([...result]);
                     console.log( searchbydepartment);
                      setdepartmentStatus(true); setnameStatus(false); setgeneralStatus(false)
                 }
                 else if (all=="name")
                 {
-                    let result = taskarray.filter(u=>(u.name.toLowerCase()==search.toLowerCase()));
+                    //let result = taskarray.filter(u=>(u.name.toLowerCase()==search.toLowerCase()));
+                    let result = taskarray.filter(u=>(u.name.toLowerCase().match(search.toLowerCase())))
                     setsearchbyname([...result]);
                     console.log( searchbyname);
                      setnameStatus(true); setdepartmentStatus(false); setgeneralStatus(false);
@@ -190,7 +192,7 @@ const Dashboard = () => {
                         <Link className='text-white' to='/dashboard'> <i>Dashboard</i></Link> <br /> 
                         <Link className='text-white me-2 ms-1' to='/form'><i>TaskForm</i> </Link>
                     </span>
-                    <input type="text" placeholder='Enter Department or Name' className='form-control w-25'  onChange={(e) => setsearch(e.target.value)} />
+                    <input type="text" placeholder='Enter Department or Name' className='form-control w-25' onChange={(e) => setsearch(e.target.value)} onKeyUp={filter} />
                     <span className='mx-2'>
                         <select className=" my-2 form-select w-100 "id="" value={all} style={{zIndex:1}} onChange={(e) => setall(e.target.value)}>
                             <option value="">Select Department or Name</option>
@@ -200,7 +202,7 @@ const Dashboard = () => {
                     </span>   
                     <button className='btn btn-small w-25 search_button shadow' onClick={filter}><FaSearch /><b className='ms-3'>Search</b> </button> 
                 </div>           
-                <p className='text-danger fs-5 animate__animated animate__flash animate__delay-1s  animate__infinite infinite animate__slower'><b>{errorMsg}</b></p>
+                <p className='text-info fs-5 animate__animated animate__flash animate__delay-1s  animate__infinite infinite animate__slower'><b>{errorMsg}</b></p>
 
                 <p className='display-4 my-3 text-secondary' style={{letterSpacing:"10px"}}> <b>Task Report</b> </p>  <hr />
                 {
@@ -297,6 +299,17 @@ const Dashboard = () => {
                                     </tbody>
                                 </table>
                             </div>
+                            <div className=' row d-flex justify-content-center my-5'>
+                                {/* *******CHART******* */}
+                                <div className='col-lg-6 shadow rounded py-2 '>      
+                                    <p className='display-3 text-secondary' style={{letterSpacing:"10px"}}> <b>Summary</b></p> <hr />
+                                    <Doughnut  data={data} options={{ responsive: true }} />  <hr />
+                                    <p className=' text-secondary animate__animated animate__pulse animate__delay-2s  animate__infinite infinite animate__slower'>
+                                        <h1 style={{letterSpacing:"20px"}}><b> Total Task</b></h1> 
+                                        <h1 style={{letterSpacing:"20px"}}><b>{total} </b></h1>
+                                    </p>
+                                </div>
+                            </div>
                             </>
                         }
                     </>:<></>
@@ -339,6 +352,17 @@ const Dashboard = () => {
                                     </tbody>
                                 </table>
                             </div>
+                                <div className=' row d-flex justify-content-center my-5'>
+                                    {/* *******CHART******* */}
+                                    <div className='col-lg-6 shadow rounded py-2 '>      
+                                        <p className='display-3 text-secondary' style={{letterSpacing:"10px"}}> <b>Summary</b></p> <hr />
+                                        <Doughnut  data={data} options={{ responsive: true }} />  <hr />
+                                        <p className=' text-secondary animate__animated animate__pulse animate__delay-2s  animate__infinite infinite animate__slower'>
+                                            <h1 style={{letterSpacing:"20px"}}><b> Total Task</b></h1> 
+                                            <h1 style={{letterSpacing:"20px"}}><b>{total} </b></h1>
+                                        </p>
+                                    </div>
+                                </div>
                             </>
                         }
                     </>:<></>
