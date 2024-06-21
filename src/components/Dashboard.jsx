@@ -202,7 +202,7 @@ const Dashboard = () => {
                     </span>   
                     <button className='btn btn-small w-25 search_button shadow' onClick={filter}><FaSearch /><b className='ms-3'>Search</b> </button> 
                 </div>           
-                <p className='text-info fs-5 animate__animated animate__flash animate__delay-1s  animate__infinite infinite animate__slower'><b>{errorMsg}</b></p>
+                <p className='text-danger fs-5 animate__animated animate__flash animate__delay-1s  animate__infinite infinite animate__slower'><i>{errorMsg}</i></p>
 
                 <p className='display-4 my-3 text-secondary' style={{letterSpacing:"10px"}}> <b>Task Report</b> </p>  <hr />
                 {
