@@ -104,7 +104,8 @@ const submit =()=>{
               <>
                 <button onClick={submit} className='btn btn-primary w-100 my-2' disabled={!validname || !name || !all || !date || !hoursworked || !taskdetails }> Submit </button>
               </>
-            }
+            } <hr />
+            <Link to="/upload" style={{letterSpacing:"2px"}}><i><u>Upload Task in Excel Document</u></i> </Link>
         </div>
       </div>
     </div>

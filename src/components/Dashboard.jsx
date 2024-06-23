@@ -188,9 +188,10 @@ const Dashboard = () => {
             {/* DESKTOP VIEW */}
             <div id='desktop'>
                 <div id='' className='d-flex shadow px-3 py-2 justify-content-center bg-primary rounded' style={{position:"sticky", top:"0", zIndex:1}}>
-                    <span id='' className='shadow me-5 px-2 rounded animate__animated animate__pulse animate__delay-2s  animate__infinite infinite animate__slower'>
-                        <Link className='text-white' to='/dashboard'> <i>Dashboard</i></Link> <br /> 
-                        <Link className='text-white me-2 ms-1' to='/form'><i>TaskForm</i> </Link>
+                    <span id='' className=' me-5 px-2 rounded animate__animated animate__pulse animate__delay-2s  animate__infinite infinite animate__slower'>
+                        {/* <Link className='text-white' to='/dashboard'> <i>Dashboard</i></Link>  */}
+                        <button onClick={reload} className='btn btn-small btn-primary shadow'> <i>Dashboard</i> </button> <br /> 
+                        <Link className='text-white me-2 ms-1 shadow' to='/form'><i>TaskForm</i> </Link>
                     </span>
                     <input type="text" placeholder='Enter Department or Name' className='form-control w-25' onChange={(e) => setsearch(e.target.value)} onKeyUp={filter} />
                     <span className='mx-2'>
