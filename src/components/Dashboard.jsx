@@ -21,7 +21,8 @@ const Dashboard = () => {
     // let editURL = "http://localhost:7000/user/edit";
 
     //VARIABLE DECLARATIONS
-    const [taskarray, settaskarray] = useState([]); const[cannotLoad, setcannotLoad]=useState(false);
+    const [taskarray, settaskarray] = useState([]); const[cannotLoad, setcannotLoad]=useState(false); 
+    const [reversetaskarray, setreversetaskarray]=useState([]);
     const[izloading, setizloading]= useState(false); const[izloading2, setizloading2]= useState(false);
     const [searchbydepartment, setsearchbydepartment] = useState([]); const [searchbyname, setsearchbyname] = useState([]);
     const [show, setShow] = useState(false); const handleClose = () => setShow(false); const handleShow = () => setShow(true);  
@@ -47,7 +48,7 @@ const Dashboard = () => {
                 }
                 else{
                     setizloading2(false)
-                    settaskarray([...response.data.result]); 
+                    settaskarray([...response.data.result].reverse());  //setreversetaskarray(taskarray.reverse)
                     setgeneralStatus(true);
                     let IT = response.data.result.filter(u=>(u.department=="IT")); setITtotal(IT.length);
                     let Accounting = response.data.result.filter(u=>(u.department=="Accounting")); setAccountingtotal(Accounting.length);
@@ -72,7 +73,7 @@ const Dashboard = () => {
             } 
         else if(response.data.status){ 
                 setizloading2(false)
-                settaskarray([...response.data.result]); 
+                settaskarray([...response.data.result].reverse()); 
                 setgeneralStatus(true);
                 let IT = response.data.result.filter(u=>(u.department=="IT")); setITtotal(IT.length);
                 let Accounting = response.data.result.filter(u=>(u.department=="Accounting")); setAccountingtotal(Accounting.length);

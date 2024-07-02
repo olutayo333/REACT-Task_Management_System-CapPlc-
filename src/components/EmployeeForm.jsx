@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
 
 const EmployeeForm = () => {
+  //onSubmit={handleSubmit} //submitting through form 
     //VARIABLE DECLARATIONS
 let submittaskURL = "https://nodejs-cap-taskmanagementserver.onrender.com/user/submittask"
 const Navigate = useNavigate();
